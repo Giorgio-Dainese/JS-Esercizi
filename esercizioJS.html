@@ -4,30 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script text="typescript/javascript"> //va sia con sia senza questa riga
 
-    </script>
 </head>
 <body>
     <script>
-         function bodycapo(messaggio){
-            messaggio=prompt('Inserisci il messaggio che vuoi')
-             return messaggio
-            
+         /* function bodycapo(messaggio){
+            body=document.body
+            elementobr=document.createElement("br")
+            body.append(messaggio)
+            body.append(elementobr)            
          }
 
-         document.write(bodycapo("valore"))
-                const body=document.body
-                elementobr=document.createElement("br")
-                body.append(elementobr)
-       
-        document.write(bodycapo("valore"))
-                elementobr=document.createElement("br")
-                body.append(elementobr)
-        
-        document.write(bodycapo("valore"))
-                elementobr=document.createElement("br")
-                body.append(elementobr)
+                bodycapo("ciao")
+                bodycapo("ciao")
+                bodycapo("ciao")
+ */
+       function stampa(x){
+        body=document.body
+        body.append(x)
+        const br=document.createElement("br")
+        body.append(br)
+        }
+
+      /*   stampa("nikko nikko neeee")
+        stampa("nikko nikko neeee")
+        stampa("nikko nikko neeee") */
+
+/*         let n=prompt("Inserisci un numero ottale") //Convertire da esadecimale a decimale
+        let ndaconvertire = `0o${n}`
+        let n2=Number(ndaconvertire) //Number fa avvenire la conversione
+        console.log(n2) */
+                                  
+        /* let fruit=["mela", "pera", "pesca"] //Splice aggiunge elementi in mezzo all'array
+        let x=fruit.splice(2,0, "Anguria", "Campari")
+        console.log(fruit) */
+
+        /* fruit=["mela", "pesca", "anguria"]
+        fruit2=["pesto", "focaccia"]
+        let frutta=fruit.concat(fruit2) //Concatena due array
+        console.log(frutta) */
+
+        /* let fruit=["mela", "pesca", "anguria", "Gunzi"]
+        delete fruit[0] //cancella l'elemento in corrispondenza dell'indice
+        console.log(fruit)
+        */
+
+        /* fruit=["mela", "pesca", "anguria"]
+        let trova=fruit.indexOf("mela") //Trova l'indice del valore che cerco
+        console.log(trova) */
+
+        let list=[]
+        list.push("Milk", "Bread", "Apples") //Aggiunge elementi all'array vuoto
+        console.log(list)
+        //terminare l'esercizio guardando la slide. Esercizio con l'elenco di 11 punti
+
 
     </script>
 </body>
