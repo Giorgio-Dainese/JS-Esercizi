@@ -11,17 +11,24 @@ in cui la categoria è "CAT1" -->
 <body>
 
 
+    <!--Se metto la funzione soomacat nello body risulterà stampata su pagina in go live e 
+        non sarà più quindi una funzione -->
 
     <script>
         function sommacat(inputarray){  //la funzione funziona anche con un parametro generico. Ad es. array
             let ret=0;
+            let ret1=0;
+            let ret2=0;
             for(let i=0;i<inputarray.length; i++){
                 if(inputarray[i].categoria=="CAT1")
                     ret++;
+                if(inputarray[i].categoria=="CAT2")
+                    ret1++;
+                if(inputarray[i].categoria=="CAT3")
+                    ret2++;
             }
-            console.log(`Cat1 compare ${ret} volte`);
+            console.log(`Cat1 compare ${ret} volte; Cat2 compare ${ret1} volte; Cat3 compare ${ret2} volte`);
         }
-        //Se metto la funzione nello body risulterà stampata su pagina in go live e non sarà più quindi una funzione
 
         let inputarray = [
                         {name: 'FD', categoria: 'CAT1'},
@@ -34,7 +41,8 @@ in cui la categoria è "CAT1" -->
         console.log(inputarray)
 
         sommacat(inputarray);
-
+        //Ho messo ret1 e ret2 per risolvere l'esercizio natalizio sui json. Non mi penso di aver svolto correttamente
+        //l'esercizio, però funziona.
     </script>
 
 
