@@ -1,0 +1,56 @@
+<!-- Scrivere una funzione che dato in input l'array inputarray restituisca in output il numero di volte 
+in cui la categoria è "CAT1" -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--Se metto la funzione soomacat nello body risulterà stampata su pagina in go live e 
+        non sarà più quindi una funzione -->
+
+    <script>
+        function sommacat(inputarray){  //la funzione funziona anche con un parametro generico. Ad es. array
+            let miojson={
+                chiave1: "valore1",
+                chiave2: "valore2",
+                chiave3: "valore3"
+
+            };
+           
+            for(let i=0;i<inputarray.length; i++){
+                if(inputarray[i].categoria=="CAT1")
+                    miojson.chiave1++;
+            
+                else
+                    miojson.chiave2++;
+              
+            }
+
+            var json1 = JSON.stringify(miojson);
+            console.log(json1)
+        }
+
+        let inputarray = [
+                        {name: 'FD', categoria: 'CAT1'},
+                        {name: 'DF', categoria: 'CAT2'},
+                        {name: 'HJ', categoria: 'CAT3'},
+                        {name: 'KL'},
+                        {name: 'CV', categoria: 'CAT2'},
+                        {name: 'KL', categoria: 'CAT1'}
+                        ];
+        console.log(inputarray);
+
+        sommacat(inputarray);
+
+    </script>
+
+
+
+</body>
+</html>
