@@ -1,1 +1,43 @@
+<!-- Scrivere una funzione che dato in input l'array inputarray restituisca in output il numero di volte 
+in cui la categoria è "CAT1" -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+        function sommacat(inputarray){  //la funzione funziona anche con un parametro generico. Ad es. array
+            let ret=0;
+            for(let i=0;i<inputarray.length; i++){
+                if(inputarray[i].categoria=="CAT1")
+                    ret++;
+            }
+            console.log(`Cat1 compare ${ret} volte`);
+        }
+        //Se metto la funzione nello body risulterà stampata su pagina in go live e non sarà più quindi una funzione
+
+        let inputarray = [
+                        {name: 'FD', categoria: 'CAT1'},
+                        {name: 'DF', categoria: 'CAT2'},
+                        {name: 'HJ', categoria: 'CAT3'},
+                        {name: 'KL'},
+                        {name: 'CV', categoria: 'CAT2'},
+                        {name: 'KL', categoria: 'CAT1'}
+                        ];
+        console.log(inputarray)
+
+        sommacat(inputarray);
+
+    </script>
+
+
+
+</body>
+</html>
