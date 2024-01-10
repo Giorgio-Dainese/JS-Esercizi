@@ -36,13 +36,46 @@
         console.log(list2)
 
         list0=list.concat(list2)
-        listall=list0.concat(list2)
+        listall=list0.concat(list2) 
         console.log(listall)
 
-        console.log(listall[8])
-        
+       console.log(listall[8]) 
         //Esercizio svolto correttamente
+        
+        //Nuovo esercizio in classe 10/01/2024, ultima pagina dispense 22/12/2023
 
+        console.log("Esercizio")
+
+        let lista=["milk", "bread", "apples"]
+        console.log(lista.length)
+        lista[1] = "bananas"
+        console.log(lista)
+
+        //Nuovo esercizio 2 in classe 10/01/2024, ultima pagina dispense 22/12/2023
+        
+        console.log ("Esercizio 2")
+       
+        let arr = [1,2,3]
+        let newarr = [arr,arr,arr]
+        console.log(newarr[0][1])
+
+        //Esercizio su funzioni svolto in classe
+
+        let body = document.body
+        function stampa(x){
+            if(x){
+                body.append(x)
+                const br = document.createElement("br")
+                body.append(br)
+            } else {
+                const hr = document.createElement("hr")
+                body.append(hr)
+            }
+        }
+
+        stampa("Buona anno!!!!!!!!!!!!!!")
+        stampa()
+        stampa("Sium")
 
     </script>
 

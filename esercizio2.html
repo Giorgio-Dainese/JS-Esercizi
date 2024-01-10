@@ -1,0 +1,45 @@
+<!-- 
+    
+    Esercizio:
+    Scrivi una funzione che chiede il tuo nome e ti saluta sul body del documento
+    utilizzando la funzione già vista. Aggiungi un po' di complessità e fai in modo
+    che se invochi la funzione passandogli il tuo nome, venga saltato il passaggio
+    di immissione per l'utente 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function saluto(nome){
+            if(nome){
+                body = document.body
+                body.append(`Ciao ${nome}!`)
+                let br = document.createElement("br")
+                body.append(br)
+            } else {
+                let nome = prompt("Qual è il tuo nome?")
+                body = document.body
+                body.append(`Ciao ${nome}!`)
+                let br = document.createElement("br")
+                body.append(br)
+            }
+        }
+
+        saluto() //fa il prompt
+        
+        saluto("Guzzi")//non fa il prompt e stampa sul body il saluto
+
+        //Esercizio corretto
+    </script>
+</body>
+</html>

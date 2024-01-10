@@ -1,0 +1,41 @@
+<!-- 
+
+    Esercizio:
+Crea un array di parole descrittive e subito dopo crea una funzione con un
+parametro che faccia le seguenti cose:
+ - chiede all'utente il suo nome e lo memorizza
+ - seleziona un valore casuale dall'array (passato come argomento)
+utilizzando Math.random.
+ - invia nella console il valore del prompt memorizzato e il valore dell'array
+selezionato casualmente.
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr = ["forza" , "autostrada" , "incredibile"]
+
+        function promptArray(x){
+            let lun=x.length
+            let nome = prompt("Qual è il tuo nome?")
+            let indice = Math.random() * lun
+            let indiceTondo = Math.floor(indice)
+            valore = x[indiceTondo]
+            console.log(nome , valore)
+        }
+
+        promptArray(arr)
+
+    </script>
+</body>
+</html>
