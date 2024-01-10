@@ -1,3 +1,16 @@
+<!-- 
+    
+    Esercizio:
+    crea una funzione calcolatrice che prende due numeri e un valore di tipo
+    stringa che indica l'operazione da eseguire.
+    Se l'operazione non è specificata alla funzione, la funzione dovrà ritornare la
+    somma dei due numeri.
+    Il valore restituito dalla funzione deve essere mostrato su log. Testa la tua
+    funzione invocandola con differenti operatori e anche senza che nessun
+    operatore sia specificato. 
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +21,29 @@
 </head>
 <body>
     
-<script></script>
+<script>
+
+    function calcolatrice(a , b , c){
+        if(c == undefined || c=="+"){
+            return a+b;
+        } else if (c == "-"){
+            return a-b;
+        } else if(c == "*"){
+            return a*b;
+        } else if (c == "/") {
+            return a/b
+        }
+    }
+
+    console.log(calcolatrice(3,2,"+"))
+
+
+</script>
 
 
 </body>
 </html>
+
+<!-- 
+    Suggerito di usare eval(). Io non l'ho usata ma le operazioni vengono fatte.
+ -->
