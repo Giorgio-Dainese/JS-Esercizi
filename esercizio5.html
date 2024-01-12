@@ -1,0 +1,105 @@
+<!-- 
+    Esercizio nelle dipense 10/01 pag 11, su Moodle
+    All'interno della console del browser, crea un vettore di almeno 5 nomi e scrivi una istruzione per far
+    comparire su console l'estrazione di uno di questi nomi.  
+
+-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let arr = ["Erik" , "Christian" , "Giorgio" , "Davide" , "Mossin" , "Luca"];
+        
+        console.log(`L'estratto è ${arr[Math.floor(Math.random ()*arr.length)]}`)
+        
+    </script>
+</body>
+</html> -->
+
+
+<!-- 
+    Esercizio nelle dipense 10/01 pag 11, su Moodle
+    Altera il comportamento della funzione Math.random() in modo che torni sempre lo stesso valore, e il
+    sorteggio sia sempre della stessa persona. Testa il comportamento della tua modifica rieseguendo
+    l'istruzione che hai usato nel primo esercizio -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Math.random = function(){
+        return 0.2;
+        }
+        let arr = ["Erik" , "Christian" , "Giorgio" , "Davide" , "Mossin" , "Luca"];
+        console.log(`L'estratto è ${arr[Math.floor(Math.random()*arr.length)]}`)
+        
+ 
+
+        
+
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- 
+    Esercizio:
+    Altera il comportamento della funzione Math.random() in modo che le estrazioni seguano sempre lo
+    stesso schema ricorrente:
+    - l'estrazione sia 1 volta della 3 persona presente nell'array, per 8 volte si estrarrà la 4 persona e poi 1
+    volta la 5 persona.
+    Testa il comportamento della tua modifica rieseguendo l'istruzione che hai usato nel primo esercizio
+ 
+-->
+ 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let i=0;
+        let indici = [0.2,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.8];
+        let arr = ["Erik" , "Christian" , "Giorgio" , "Davide" , "Mossin" , "Luca"];
+        Math.random = function(){
+            if(i<indici.length){
+            let val = indici[i];
+            i++;
+            return val
+            }
+            else{
+                i=0;
+                let val = indici [i];
+                i++
+                return val
+            }    
+        }
+
+        console.log(arr[Math.floor(Math.random()*arr.length)])
+        
+    /* Per stampare su ispeziona il nome del sorteggiato scrivere, su ispeziona arr[Math.floor(Math.random()*arr.length)] */    
+        
+    </script>
+</body>
+</html>
