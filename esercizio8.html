@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ciclo(){
+            somma = 0;
+            for(i=0; i<5; i++){
+            /* let numero = parseInt(prompt("Inserisci un numero"), 10); */
+            let numero = Number(prompt("Inserisci un numero"));
+            /* somma = somma + numero; */ 
+            somma += numero /* Metodo più veloce di quello sopra */
+            }
+            document.body.append(`La somma dei 5 numeri è: ${somma}`)
+        }
+
+
+/* to fill an array con numeri dispari tra 1 e 19 stampare a video array */
+
+        function arrDisp(){
+            let arr=[];
+            
+            for(i=1; i<20; i+=2) {
+               
+                    console.log(i)
+                    arr.push(i)
+                    console.log(arr)
+                
+            }
+            document.body.append(arr)
+        }
+
+
+        /* Estrazione con parametro senza doppioni */
+
+        function estrazione(n){
+            let numeri = [];
+            
+            for (let i=0; i<n; i++){
+                let estratto = Math.ceil(Math.random()*90)
+                while(numeri.includes(estratto))
+                    estratto = Math.ceil(Math.random()*90)
+                numeri.push(estratto)
+            }
+            console.log(numeri)
+        }
+
+
+    </script>
+</body>
+</html>
+
