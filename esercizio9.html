@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        /* funzione ricorsiva */
+        /* function ricorsione(nr){
+            console.log(nr);
+            if(nr>0)
+                ricorsione(nr-1);
+            console.log("*"+nr);
+        } */
+
+        /* setTimeout */
+        /* let f1 = ()=> console.log("uno")
+        let f2 = ()=> console.log("due")
+        let f3 = ()=> { console.log("tre"); f1(); f2() }
+        let f4 = ()=> { console.log("quattro"); setTimeout(f1,1000); f3() }
+        f4() */
+        
+
+        /* Metodo IFEE per scrivere più velocemente le funzioni */
+        /* ((x,y) => console.log(x + y))(7,3); */
+
+        let val = 1000;
+        (() => {let val = 10; console.log(val);})()
+        console.log(val);
+
+        ((x) => console.log(`Il mio nome è ${x}`))("Guzzi")
+
+    </script>
+</body>
+</html>

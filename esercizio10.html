@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Esercizi su oggetti */
+        
+        let p= {
+            name: "Guzzi", 
+            surname: "Guzzi"
+        }
+
+        let myCar = {
+            manufacturer: "Ferrari Spa",
+            model: "Enzo",
+            engine: "NA V12",
+            power: "660" ,
+            torque: "657",
+            year: "2002",
+            turbo: false,
+            owner: p
+        }
+
+        myCar["colour"]= "Rosso Corsa"
+
+        console.log(`La vettura è la ${myCar.model}, fatta da ${myCar.manufacturer}`)
+
+        /* function LibroConFunzione (titolo,autore,editore,prezzo) {
+        this.titolo=titolo;
+        this.autore=autore;
+        this.editore=editore;
+        this.prezzo=prezzo;
+        }
+
+        let libro2 = new LibroConFunzione("L'insostenibile leggerezza dell'essere","Milan Kundera","adelphi",23.75)
+        console.log(libro2)
+
+
+        class Libro2{
+        constructor(titolo,autore,editore,prezzo){
+        this.titolo=titolo;
+        this.autore=autore;
+        this.editore=editore;
+        this.prezzo=prezzo;
+        }
+        }
+
+        let libro3 = new Libro("L'insostenibile leggerezza dell'essere","Milan Kundera","adelphi",23.75)
+        console.log(libro3) */
+
+
+
+        class Libro{
+        constructor(titolo,autore,editore,prezzo){
+        this.titolo=titolo;
+        this.autore=autore;
+        this.editore=editore;
+        this.prezzo=prezzo;
+        }
+        prendiTitolo(){
+        console.log("il mio titolo è: "+this.titolo)
+        }
+        }
+        let libro3 = new Libro("L'insostenibile leggerezza dell'essere","Milan Kundera","adelphi",23.75)
+        console.log(libro3.prendiTitolo())
+
+    </script>
+</body>
+</html>
