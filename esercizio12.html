@@ -1,0 +1,54 @@
+<!-- 
+    esercizio:
+        creare una stringa con più parole separate da spazi che contengono lettere maiuscole e
+        minuscole e passala come argomento ad una funzione che elabori la stringa ricevuta in
+        ingresso come parametro nel seguente modo:
+        1. trasforma la stringa ricevuta in ingresso in minuscolo e memorizzala in una variabile str
+        2. crea un array vuoto di nome tempArr
+        3. memorizza in un array di nome parole le parole contenute nella stringa ricevuta in
+        ingresso.
+        4. esamina ogni parola memorizzata nell'array (puoi usare for oppure forEach) e trova un
+        modo per convertire la prima lettera di ogni parola in maiuscolo
+        5. aggiungi la nuova parola nell'array tempArr
+        6. trasforma nuovamente l'array di parole tempArr in una stringa con spazi fra ogni parola
+        7. restituisci la nuova stringa cosi creata. 
+
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stringa = "Guzzi Palermo ferrari AMG"
+        
+        function elaboraStringa(par){
+            let str = par.toLowerCase()
+            console.log(str)
+            let tempArr = []
+            let parole = str.split(" ")
+            console.log(`Le parole separate sono ${parole}`)
+            let inizialeMaiuscola = []
+            parole.forEach(x =>inizialeMaiuscola.push(x.charAt(0).toUpperCase()+x.slice(1))) 
+            console.log(inizialeMaiuscola.join(" "))
+            tempArr = parole
+            tempArr.push("Petronas")
+            console.log(tempArr)
+            let strTempArr = tempArr.join(",")
+            console.log(strTempArr, typeof(strTempArr))
+            
+        }
+        
+        elaboraStringa(stringa)
+    </script>
+</body>
+</html>

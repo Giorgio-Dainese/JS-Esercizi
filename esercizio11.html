@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Persona{
+            constructor(nome, cognome){
+                this.nome=nome;
+                this.cognome=cognome;
+            }
+        fullName() {
+            console.log(this.nome, this.cognome)    
+        }
+        }
+        
+        let NoCo = new Persona ("Gumzi", "Guzzi")
+        console.log(NoCo.fullName())
+
+        console.log("")
+
+        let NoCo2 = new Persona("Christian", "Gumzi")
+        let NoCo3 = new Persona("Gambo", "Gumzi")
+
+        console.log(NoCo2.fullName())
+        console.log(NoCo3.fullName())
+    </script>
+</body>
+</html>

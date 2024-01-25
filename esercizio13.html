@@ -1,0 +1,33 @@
+<!-- 
+    
+    esercizio:
+    creare una stringa in minuscolo con più parole separate da spazi. Le parole devono
+    contenere anche vocali e passala come argomento ad una funzione che elabori la stringa
+    ricevuta in ingresso come parametro nel seguente modo:
+    1. sostituisca con numeri crescenti(0,1,2,..) le vocali presenti (a,e,i,...)
+    2. restituisca la nuova stringa cosi creata
+ 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stringa = "gumzi granata saverio"
+        let vocali = ["a", "e", "i", "o", "u"]
+        function sostituzione(){
+            vocali.forEach((x,y)=>stringa=stringa.replaceAll(x,y))
+        }
+
+        sostituzione()
+        console.log(stringa)
+    </script>
+</body>
+</html>
