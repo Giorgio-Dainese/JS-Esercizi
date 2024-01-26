@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Animale{
+            constructor(specie, verso, preferenzaAlimentare){
+            this.specie = specie
+            this.verso = verso
+            this.preferenzaAlimentare = preferenzaAlimentare
+            }
+            faiVerso(){
+                console.log(`Oh fra, como ti ciami? Io sono ${this.specie} e ${this.verso}`)
+            }
+        }
+
+        let a = new Animale("Coccodrillo", "Scrocchio", "Anguriazza")
+        let b = new Animale("Gatto", "Miagolo", "Carnazza")
+        a.faiVerso()
+        b.faiVerso()
+        
+        
+
+        Animale.prototype.mangia = function(){
+            console.log(`Ora mi smeriglio il gargarozzo con la ${this.preferenzaAlimentare}`)
+        }
+
+        a.mangia()
+        b.mangia()
+
+        console.log(a,b)
+
+        
+        b.mangia = function(){
+            console.log("*****")
+        }
+        a.mangia()
+        b.mangia()
+
+    </script>
+</body>
+</html>

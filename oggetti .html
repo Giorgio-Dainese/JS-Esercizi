@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Punto{
+            constructor (x=0,y=0)/* Dà valore 0 di default in caso di mancato inserimento dati */{
+                this.x=x
+                this.y=y
+            }
+            somma(p){
+                return new Punto(this.x+p.x, this.y+p.y) /* Somma dei 2 punti creando un nuovo oggetto. Meglio questa*/
+            }
+            somma2(p){
+                this.x=this.x+p.x /* Somma dei 2 punti NON creando un nuovo oggetto */
+                this.y=this.y+p.y            
+            }
+        }
+
+        let p1 = new Punto(7)
+        let p2 = new Punto()
+        p3 = p1.somma(p2)
+        console.log(p1,p2,p3)
+        p1.somma2(p2)
+        console.log(p1, p2)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Libro{
+            constructor(titolo,prezzo){
+            this.titolo = titolo
+            this.prezzo = prezzo
+            }
+        prezzoMin(p){
+            if(this.prezzo<p.prezzo){
+            return new Libro(this.titolo, this.prezzo)
+            } else{
+                return new Libro(p.titolo, p.prezzo)
+            }
+        }
+        }
+
+        let l1 = new Libro("Titolo1", 85)
+        let l2 = new Libro("Titolo 2", 30)
+        l3 = l1.prezzoMin(l2)
+        console.log(l1,l2)
+        console.log(`Il libro più economico è ${l3.titolo} ${l3.prezzo}`)
+
+    </script>
+</body>
+</html>
