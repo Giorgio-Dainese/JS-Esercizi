@@ -1,0 +1,127 @@
+<!-- Esercizio per fare pratica con le date -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ariete = {
+            giornoInizio:"21",
+            giornoFine:"20",
+            meseInizio:"2",
+            meseFine:"3",
+            nome:"Ariete" 
+        }
+
+        let toro = {
+            giornoInizio:"21",
+            giornoFine:"20",
+            meseInizio:"3",
+            meseFine:"4",
+            nome:"Toro" 
+        }
+
+        let gemelli = {
+            giornoInizio:"21",
+            giornoFine:"21",
+            meseInizio:"4",
+            meseFine:"5",
+            nome:"Gemelli" 
+        }
+
+        let cancro = {
+            giornoInizio:"22",
+            giornoFine:"22",
+            meseInizio:"5",
+            meseFine:"6",
+            nome:"Cancro" 
+        }
+        let leone = {
+            giornoInizio:"23",
+            giornoFine:"23",
+            meseInizio:"6",
+            meseFine:"7",
+            nome:"Leone" 
+        }
+        let vergine = {
+            giornoInizio:"24",
+            giornoFine:"22",
+            meseInizio:"7",
+            meseFine:"8",
+            nome:"Vergine" 
+        }
+        let bilancia = {
+            giornoInizio:"23",
+            giornoFine:"22",
+            meseInizio:"8",
+            meseFine:"9",
+            nome:"Bilancia" 
+        }
+        let scorpione = {
+            giornoInizio:"23",
+            giornoFine:"22",
+            meseInizio:"9",
+            meseFine:"10",
+            nome:"Scorpione" 
+        }
+        let sagittario = {
+            giornoInizio:"23",
+            giornoFine:"21",
+            meseInizio:"10",
+            meseFine:"11",
+            nome:"Sagittario" 
+        }
+        let capricorno = {
+            giornoInizio:"22",
+            giornoFine:"20",
+            meseInizio:"11",
+            meseFine:"0",
+            nome:"Capricorno" 
+        }
+        let acquario = {
+            giornoInizio:"21",
+            giornoFine:"19",
+            meseInizio:"0",
+            meseFine:"1",
+            nome:"Acquario" 
+        }
+        let pesci = {
+            giornoInizio:"20",
+            giornoFine:"20",
+            meseInizio:"1",
+            meseFine:"2",
+            nome:"Pesci" 
+        }
+
+
+        
+        
+        let arr=[ariete, toro, gemelli, cancro, leone, vergine, bilancia, scorpione, sagittario, capricorno, acquario, pesci]
+
+        function individuaSegno(mese, giorno){
+            let data = new Date(2000, mese, giorno)
+            for (let i = 0; i < arr.length; i++) {
+                let dataInizioOroscopo = new Date(2000, arr[i].meseInizio, arr[i].giornoInizio)
+                let dataFineOroscopo = new Date(2000, arr[i].meseFine, arr[i].meseFine)
+               
+                if ( data>=dataInizioOroscopo && dataFineOroscopo ) {
+                    var segno = arr[i].nome
+                    return console.log(segno)
+                } 
+                
+            }
+            
+        
+
+        }
+
+        /* Mi ritorna sempre ariete. Il problema è il return. Spostando il return torna sempre un solo altro segno. Correggere */
+
+    </script>
+</body>
+</html>

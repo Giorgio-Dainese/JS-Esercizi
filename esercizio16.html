@@ -1,0 +1,67 @@
+<!-- 
+    Esercizio
+        • crea una classe per tenere traccia dei dipendenti di un'azienda:
+        utilizza nome, cognome e il numero di anni di lavoro come
+        proprietà da inizializzare nel costruttore.
+        • crea 3 o più persone con valori per nome, cognome e
+        numero di anni di lavoro presso l'azienda. Aggiungi le persone
+        in un array.
+        • imposta un prototipo per restituire i dettagli del nome, cognome
+        della persona e da quanto tempo lavora in azienda
+        • per ogni elemento dell'array richiama il nuovo metodo che hai
+        attribuito alla classe nel punto precedente.
+        Consigli: All'interno della funzione ti servirà usare for o forEach 
+        • Creare una funzione di ricerca. Per un attributo inserito, cercare e stampare la persona corrispondente
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Dipendente{
+           constructor(nome, cognome, anniCarriera){
+            this.nome = nome;
+            this.cognome = cognome;
+            this.anniCarriera = anniCarriera;
+           }
+        }
+
+        let p1 = new Dipendente("Mario", "Rossi", 5)
+        let p2 = new Dipendente("Luca", "Ferrari", 7)
+        let p3 = new Dipendente("Saverio", "Verdi", 24)
+
+        let arr = [p1, p2, p3]
+
+        Dipendente.prototype.presentazione = function(){
+            console.log(`Bro: ${this.nome}, Fra: ${this.cognome}, Anni: ${this.anniCarriera}`)
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+            arr[i].presentazione()
+        }
+
+        
+        function ricerca(x){
+        for (elemento of arr) {
+            if(elemento.nome==x){
+               return console.log(`La ricerca corrisponde a: ${JSON.stringify(elemento)}`)
+            } else  if(elemento.cognome==x){
+               return console.log(`La ricerca corrisponde a: ${JSON.stringify(elemento)}`)
+            } else  if(elemento.anniCarriera==x){
+               return console.log(`La ricerca corrisponde a: ${JSON.stringify(elemento)}`)
+            } 
+        }
+        }
+
+        ricerca("7")
+
+    </script>
+</body>
+</html>
