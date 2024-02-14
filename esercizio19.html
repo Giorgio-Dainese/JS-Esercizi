@@ -1,0 +1,32 @@
+<!-- ES1 stampare con console.log i numeri multipli di 10 , da 50 a 90 (utilizzare while) -->
+<!-- ES2   chiedere 5 volte con un for l'inserimento di un prezzo, a questo si dovrà aggiungere l'iva (22%); 
+    a quel punto memorizzare in un array il prezzo cosi fatto. Utilizzare un for con la sintassi: 
+    for(elemento of array) per stampare con console.log la somma dei prezzi a video.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* ES1 */
+        let i = 50;
+        while (i<100){
+            console.log(i);
+            i = i +10
+        }
+
+        /* ES2 */
+        for(let j=0; j<5; j++){
+            let input=Number(prompt("Insersci il " +(j+1)+ "° prezzo: "))
+            let iva = input + ((input*22)/100)
+            console.log(iva)
+        }
+
+    </script>
+</body>
+</html>
