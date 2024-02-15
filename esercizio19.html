@@ -1,7 +1,14 @@
 <!-- ES1 stampare con console.log i numeri multipli di 10 , da 50 a 90 (utilizzare while) -->
-<!-- ES2   chiedere 5 volte con un for l'inserimento di un prezzo, a questo si dovrà aggiungere l'iva (22%); 
-    a quel punto memorizzare in un array il prezzo cosi fatto. Utilizzare un for con la sintassi: 
-    for(elemento of array) per stampare con console.log la somma dei prezzi a video.-->
+<!-- ES2 chiedere 5 volte con un for l'inserimento di un prezzo, a questo si dovrà aggiungere l'iva (22%); 
+     a quel punto memorizzare in un array il prezzo cosi fatto. Utilizzare un for con la sintassi: 
+     for(elemento of array) per stampare con console.log la somma dei prezzi a video.-->
+<!-- ES3 analizzare un array di numeri con un ciclo for e contare quanti di questi sono uguali 
+     a 0. Prova a realizzarlo con un for normale. Facoltativamente prova a realizzarlo 
+     anche con un forEach -->
+<!-- ES4 dato l'array: ["xxxx",3,2,"hhh",0,1,"aa"], fai un ciclo for sia per contare 
+     il numero di stringhe sia per memorizzarle in un array separato-->
+<!-- ES5 dato l'array: [1,2,3,4,5] quanti sono gli elementi? fai con un ciclo for 
+     per fare la somma degli elementi. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,11 +28,63 @@
         }
 
         /* ES2 */
+        let ivato = [];
         for(let j=0; j<5; j++){
-            let input=Number(prompt("Insersci il " +(j+1)+ "° prezzo: "))
-            let iva = input + ((input*22)/100)
-            console.log(iva)
+            let input=Number(prompt("Insersci il " +(j+1)+ "° prezzo: "));
+            let iva = input + ((input*22)/100);
+            console.log(iva);
+            ivato.push(iva);
         }
+        console.log(ivato);
+
+        let sommaIvato = 0;
+        for(elemento of ivato){
+            sommaIvato += elemento;
+        }
+
+        console.log(sommaIvato);
+
+
+        /* ES3 */
+
+        let arr = [1,2,43,223,45,323,45,0,0,54,0,765,43,0,34345,9,7,4,45,786,0,75,678,0,654];
+        let zeri = 0;
+        for(let k = 0; k < arr.length; k++){
+            if(arr[k] == 0){
+                zeri += 1;
+            }
+        }
+        console.log("Gli zeri nell'array sono: " +zeri)
+
+        arr.forEach(element => {
+            if(element == 0){
+                zeri += 1
+            }
+        })
+        console.log("Gli zeri nell'array sono: " +zeri)
+
+
+        /* ES4 */
+        let vettore = ["xxxx",3,2,"hhh",0,1,"aa"];
+        let contaStringhe = 0;
+        let stringhe = [];
+        for(let x = 0; x < vettore.length; x++){
+            if(typeof (vettore[x]) == "string"){
+                contaStringhe += 1;
+                stringhe.push(vettore[x])
+            }
+        }
+        console.log("Il numero di stringhe è: " +contaStringhe)
+        console.log("Le stringhe sono: " +stringhe);
+
+        /* ES5 */
+        let vet = [1,2,3,4,5];
+        let sommaVet = 0;
+        console.log("Gli elementi dell'array vet sono: " +vet.length);
+        for(elemento of vet){
+            sommaVet += elemento;
+        }
+        console.log("La somma dell'array vet è: " +sommaVet);
 
     </script>
 </body>
