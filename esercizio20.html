@@ -1,0 +1,169 @@
+<!-- ESERCIZI FUNZIONI SLIDE ESERCITAZIONE(moodle) -->
+
+<!-- ES1 scrivi una funzione che somma i numeri passati in un array come unico parametro -->
+<!-- ES2 scrivi una funzione che prende come parametro un array di numeri e come secondo parametro
+     facoltativo un numero che se è 1 fa la somma dei numeri mentre se vale 2 fara la differenza
+     il valore deve essere restituito con un return -->
+<!-- ES3 uguale al precedente ma il valore deve essere stampato a video -->
+<!-- ES4 scrivere nei 3 modi che conosci una funzione che prende come parametri due array della stessa 
+     dimensione e restituisce un array con la somma dei valori -->
+<!-- ES5 scrivere una funzione con i 3 modi che conosci che prende 2 valori come parametri e stampa a video 
+     con console.log tutti i numeri che vanno dal primo numero al secondo-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/* ARRAY da usare negli esercizi sotto */
+    let array = [10,20,30,40,50];
+    let array2 = [60,70,80,90,100];
+    let sommaDueArrays = [];
+
+
+    /* ES1 */
+    function sommaArray(a){
+        let somma = 0;
+        for(elemento of a){
+            somma = somma + elemento;
+        }
+        return somma;
+    }
+    
+
+    /* ES2 */
+    function sommaDifferenzaArray(a,b){
+        let somma = 0;
+        let differenza = 0;
+        if(b == 1){
+            for(elemento of a){
+            somma += elemento;
+        }
+            return somma;
+        } else if(b == 2){
+            for(elemento of a){
+            differenza -= elemento 
+            }
+            return differenza;
+        }
+        
+    }
+
+    /* ES3 */
+    function sommaDifferenzaArrayStampaVideo(a,b){
+        let somma = 0;
+        let differenza = 0;
+        if(b == 1){
+            for(elemento of a){
+            somma += elemento;
+        }
+            console.log("Hai scelto 1 e la somma è: " +somma)
+        } else if(b == 2){
+            for(elemento of a){
+            differenza -= elemento 
+            }
+            console.log("Hai scelto 2 e la differenza è: " +differenza)        
+        }
+        
+    }
+
+    /* ES4 */
+    /* Funzione classica */
+    function sommaDueArray(arr1,arr2){
+        if(arr1.length != arr2.length){
+            console.log("Hai inserito due array di dimensioni diverse")
+        } else console.log("Hai inserito due array di uguale dimensione, procediamo con i calcoli")
+        for(let i = 0; i < arr1.length; i ++){
+            sommaDueArrays.push(arr1[i]+arr2[i])
+        }
+        return sommaDueArrays;
+    }
+    
+    /* Funzione freccia */
+    sommaDueArrayFreccia = (arr1,arr2) => {
+        if(arr1.length != arr2.length){
+            console.log("Hai inserito due array di dimensioni diverse")
+        } else console.log("Hai inserito due array di uguale dimensione, procediamo con i calcoli")
+        for(let i = 0; i < arr1.length; i ++){
+            sommaDueArrays.push(arr1[i]+arr2[i])
+        }
+        return sommaDueArrays;
+    }
+
+    /* Funzione anonima associata a variabile */
+    let sommaDueArrayAnonima = function (arr1, arr2){
+        if(arr1.length != arr2.length){
+            console.log("Hai inserito due array di dimensioni diverse")
+        } else console.log("Hai inserito due array di uguale dimensione, procediamo con i calcoli")
+        for(let i = 0; i < arr1.length; i ++){
+            sommaDueArrays.push(arr1[i]+arr2[i])
+        }
+        return sommaDueArrays;
+    }
+    console.log(sommaDueArray(array, array2));
+
+
+    /* ES5 */
+
+    /* Funzione classica */
+    function stampaIntermezzi(a,b){
+        let minore = 0;
+        let maggiore = 0;
+        let sommaIntermezzi = 0;
+        if(a<b){
+            minore = a;
+            maggiore = b;
+            
+        } else{ maggiore= a;
+               minore = b;} 
+        
+        for(let i = minore+1; i < maggiore; i++){
+            console.log(i)
+        }
+        
+    }
+
+     /* Funzione freccia */
+     stampaIntermezziFreccia = (a,b) => {
+        let minore = 0;
+        let maggiore = 0;
+        let sommaIntermezzi = 0;
+        if(a<b){
+            minore = a;
+            maggiore = b;
+            
+        } else{ maggiore= a;
+               minore = b;} 
+        
+        for(let i = minore+1; i < maggiore; i++){
+            console.log(i)
+        }
+     }
+
+     /* Funzione anonima associata a variabile */
+     let stampaIntermezziAnonima = function (a,b){
+        let minore = 0;
+        let maggiore = 0;
+        let sommaIntermezzi = 0;
+        if(a<b){
+            minore = a;
+            maggiore = b;
+            
+        } else{ maggiore= a;
+               minore = b;} 
+        
+        for(let i = minore+1; i < maggiore; i++){
+            console.log(i)
+        }
+     }
+
+    </script>
+</body>
+</html>
