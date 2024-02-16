@@ -1,0 +1,55 @@
+<!-- ESERCIZI OGGETTI SLIDE ESERCITAZIONE(moodle) -->
+
+<!-- ES1 creare 3 oggetti che rappresentano un lavoratore(anniLavorativi,salario,nome, etc) e inserirli 
+     all'interno di un array. A questo punto stampare a video una proprietà qualsiasi del 2 elemento. 
+     Aggiungere poi un metodo per restituire il suo salario maggiorato in questo modo: 
+     salario+(salario * anniLavorativi/100) -->
+<!-- ES.2 analizzare l'array creato al punto precedente con un for per trovare il lavoratore che prende 
+     il salario minimo -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* ES1 */
+    class Lavoratore{
+        constructor (nome, cognome, salario, anniLavorativi){
+            this.nome = nome;
+            this.cognome = cognome;
+            this.salario = salario;
+            this.anniLavorativi = anniLavorativi;
+        }
+        salarioMaggiorato(){
+            return this.salario + (this.salario * this.anniLavorativi/100);
+        }
+    }
+
+    let lavoratore1 = new Lavoratore("Homer", "Simpson", 4000, 10); 
+    let lavoratore2 = new Lavoratore("Giorgio", "Gumzi", 9750, 1);
+    let lavoratore3 = new Lavoratore("Fabrizio", "Il Fresco di Zona", 2000, 3);
+
+    let lavoratori = [lavoratore1, lavoratore2, lavoratore3];
+
+    console.log(lavoratori[1].cognome);
+    console.log(lavoratori[1].salarioMaggiorato());
+
+    /* ES2 */
+    let minimo = 10000000;
+    for(elemento of lavoratori){
+        if(elemento.salario<minimo){
+            minimo = elemento ;
+        }
+        
+    }
+    console.log("Il lavoratore che guadagna meno è: " +elemento.nome+ " anche consciuto come " +elemento.cognome);
+
+
+    </script>
+</body>
+</html>
