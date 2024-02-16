@@ -8,7 +8,9 @@
 <!-- ES4 dato l'array: ["xxxx",3,2,"hhh",0,1,"aa"], fai un ciclo for sia per contare 
      il numero di stringhe sia per memorizzarle in un array separato-->
 <!-- ES5 dato l'array: [1,2,3,4,5] quanti sono gli elementi? fai con un ciclo for 
-     per fare la somma degli elementi. -->
+     per fare la somma degli elementi. 
+     ES5.2 fai la somma degli elementi solo se i numeri sono >=3 -->
+<!-- ES5.3 dato l'array ["xxxx",3,2,"hhh",0,1,"aa"] somma solo gli elementi che sono numeri con un ciclo for -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,14 +53,14 @@
         let zeri = 0;
         for(let k = 0; k < arr.length; k++){
             if(arr[k] == 0){
-                zeri += 1;
+                zeri ++;
             }
         }
         console.log("Gli zeri nell'array sono: " +zeri)
 
         arr.forEach(element => {
             if(element == 0){
-                zeri += 1
+                zeri ++
             }
         })
         console.log("Gli zeri nell'array sono: " +zeri)
@@ -70,7 +72,7 @@
         let stringhe = [];
         for(let x = 0; x < vettore.length; x++){
             if(typeof (vettore[x]) == "string"){
-                contaStringhe += 1;
+                contaStringhe ++;
                 stringhe.push(vettore[x])
             }
         }
@@ -86,6 +88,24 @@
         }
         console.log("La somma dell'array vet è: " +sommaVet);
 
+        /* ES5.2 */
+        let sommaVet3 = 0;
+        for(elemento of vet){
+            if(elemento>= 3){
+                sommaVet3 += elemento;
+            }
+        }
+        console.log("La somma degli elementi >= 3 è: " +sommaVet3)
+
+        /* ES5.3 */
+        //Uso array vettore, dichiarato a linea 70
+        let sommaNumeri = 0;
+        for(elemento of vettore){
+            if(typeof(elemento) == "number"){
+                sommaNumeri +=elemento;
+            }
+        }
+        console.log("La somma dei numeri nell'array vettore è: " +sommaNumeri);
     </script>
 </body>
 </html>
