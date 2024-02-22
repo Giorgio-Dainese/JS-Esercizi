@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        miaCollection = [{id:"Pippo", class:"miaClasse" },
+                         {id:"Pluto", class:"miaClasse" },
+                         {id:"Paperino", class:"miaClasse2" }]
+
+        function getElementprovaById(collection, id){
+            let oggetto = {}
+            for(let i = 0; i < miaCollection.length; i++)
+            if (collection[i].id == id){
+                oggetto = collection[i]
+                break    //Break interrompe il ciclo. Devo trovare solo il primo id, tanto sono univoci e non ce ne sarà un secondo
+            }
+            return oggetto
+        }
+
+        function getElementSprovaByClassName(collection, classe){
+            let array = []
+            for(let i = 0; i < miaCollection.length; i++)
+            if (collection[i].class == classe){
+                array.push(collection[i])
+            }
+            return array
+        }
+
+    </script>
+</body>
+</html>
