@@ -43,3 +43,17 @@ let naviColpite = [0,0]
 //colora il campo di gioco dell'avversario discriminando il colore
 //se colpisce incrementa numero navi colpite
 //se numero navi colpite == massimo segnala vittoria
+
+function getParameters(stringa){
+    let arrayParametri=[];
+     for (let i = 1; i < stringa.length; i+= 2){
+             arrayParametri.push(stringa[i])
+     }
+     //Ritorna solo i parametri
+     return arrayParametri;
+
+     //Ritorna stringa concatenata con parametri
+     //return "(" +arrayParametri[0]+ "," +arrayParametri[1]+ "," +arrayParametri[2]+ ")"
+}
+
+console.log(getParameters("p1r1c2"))

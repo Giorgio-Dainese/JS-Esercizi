@@ -154,14 +154,24 @@
                 //oppure 
                 //return (campi[player-1][row-1][col-1] == 1) ? "colpito" : "acqua" ;
             }
-                
+            //funzione che inizializza il gioco
+            function init(){
+                //inizializzo la classe delle celle a empty
+                const els = document.getElementsByClassName("col");
+                [].forEach.call(els, function (el) {el.classList.add("empty") });
+            }
+            window.addEventListener("load", (event) => {
+                init();
+            });
+
             </script>        
     </head>
+    <!--<body onload="init()">-->
     <body>
         <p>GRIGLIA GIOCATORE 1</p>
 <div id='p1' class="griglia">
     <div id='p1r1' class="row">
-        <div id="p1r1c1" class="col"></div>
+        <div id="p1r1c1" class="col" onclick="colpisci(this)"></div>
         <div id="p1r1c2" class="col"></div>
         <div id="p1r1c3" class="col"></div>
     </div>
@@ -198,3 +208,20 @@
 </table>
 </body>
 </html>
+
+<script>
+    //scrivere una funzione che dato in input una string di tipo idcella
+    //(es p1r1c1)
+    //restituisca solo gli indici (es 1,1,1) 
+    function getParameters(stringa){
+    let arrayParametri=[];
+     for (let i = 1; i < stringa.length; i+= 2){
+             arrayParametri.push(stringa[i])
+     }
+     //Ritorna solo i parametri
+     return arrayParametri;
+
+     //Ritorna stringa concatenata con parametri
+     //return "(" +arrayParametri[0]+ "," +arrayParametri[1]+ "," +arrayParametri[2]+ ")"
+}
+</script>
