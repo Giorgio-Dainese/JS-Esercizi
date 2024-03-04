@@ -134,7 +134,7 @@
                     const cell=document.getElementById(`p${player}r${row}c${col}`);
                     cell.classList.add(classe) 
                 }             
-
+                switchPlayer();
                 return ret;                
             }
             // fa troppe poche cose, non mi serve
@@ -157,17 +157,66 @@
             //funzione che inizializza il gioco
             function init(){
                 //inizializzo la classe delle celle a empty
+                //e associa l'evento del click
                 const els = document.getElementsByClassName("col");
-                [].forEach.call(els, function (el) {el.classList.add("empty") });
+                [].forEach.call(els, function (el) {
+                    el.classList.add("empty") 
+                    el.addEventListener("click", function(ev){clickCella(ev.target.id)})
+                });
             }
+
+            //funzione riceve in input la string con idcella (es p1r1c1 ) e chiama
+            //la funzione colpisci passando in input player, row, col
+            // 
+            function clickCella(idcella){
+                //FD TODO mancano i controlli di correttezza input
+                //(es id cella p1r1c1)
+                //dobbiamo trovare solo gli indici (es 1,1,1)
+                console.log("cliccato", idcella);
+                const parametri = idcella.match(/\d+/g) 
+                if (parametri[0] == currentPlayer)
+                    colpisci(parametri[0], parametri[1], parametri[2]);
+                else
+                    alert('non tocca a te!');
+            }
+            //evento associato al window al caricamento della pagina
             window.addEventListener("load", (event) => {
                 init();
             });
+            //eventi associati a tutte le celle
+            
+            //meccanismo di gioco:
+            //inizia il giocatore 1
+            //ad ogni colpo tocca all'altro giocatore
+
+            currentPlayer=1;
+            function switchPlayer(){
+                //se toccava a player 1 adesso tocca a player 2 e viceversa
+                // if (currentPlayer == 1)
+                //     currentPlayer = 2;
+                // else
+                //     currentPlayer = 1;
+                //oppure
+                // currentPlayer = (currentPlayer == 1) ? 2 : 1;
+                //oppure
+                currentPlayer = currentPlayer % 2 + 1;
+                document.getElementById("currentplayer").innerText = currentPlayer
+            }
 
             </script>        
     </head>
     <!--<body onload="init()">-->
     <body>
+
+        <p>Scegli il primo giocatore</p>
+        <input type="text" id="idStartPlayer"> 
+        <button style="background-color: green;" >Invia</button>   
+        </body>
+        </html>
+
+
+
+        <p >Tocca al giocatore <span id="currentplayer">1</span></p>
         <p>GRIGLIA GIOCATORE 1</p>
 <div id='p1' class="griglia">
     <div id='p1r1' class="row">
@@ -206,22 +255,15 @@
     </tr>
     
 </table>
-</body>
-</html>
 
-<script>
-    //scrivere una funzione che dato in input una string di tipo idcella
-    //(es p1r1c1)
-    //restituisca solo gli indici (es 1,1,1) 
-    function getParameters(stringa){
-    let arrayParametri=[];
-     for (let i = 1; i < stringa.length; i+= 2){
-             arrayParametri.push(stringa[i])
-     }
-     //Ritorna solo i parametri
-     return arrayParametri;
 
-     //Ritorna stringa concatenata con parametri
-     //return "(" +arrayParametri[0]+ "," +arrayParametri[1]+ "," +arrayParametri[2]+ ")"
-}
-</script>
+
+<!--
+    aggiungere la funzionalità di chiedere quale giocatore inizia:
+    il currentPlayer è inizializzato a 0
+    serve un campo di input per inserire quale deve essere il currentPlayer
+    serve un bottone o un div colorato che funga da bottone al quale associare l'evento
+    l'evento deve valorizzare il current player (sia la variabile js sia il campo html )
+    
+-->
+

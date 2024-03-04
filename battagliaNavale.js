@@ -57,3 +57,12 @@ function getParameters(stringa){
 }
 
 console.log(getParameters("p1r1c2"))
+
+stringa = "p1r1c1"
+
+let pdpf=5%5453     3;
+pdpf
+
+//elemento html che accetta una textbox. <input type text> 
+//button colorato
+associare al click la scelta di chi inizia per primo
